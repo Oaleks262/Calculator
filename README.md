@@ -7,7 +7,7 @@ Features:
 -Subtraction of numbers
 -Multiplication of numbers
 -Division of numbers
--Calculation of percentages
+
 
 
 Requirements:
@@ -22,7 +22,7 @@ JavaScript Калькулятор
 -Віднімання чисел
 -Множення чисел
 -Ділення чисел
--Обчислення відсотків
+
 
 Вимоги:
 Для використання калькулятора необхідно мати встановлений веб-браузер, який підтримує JavaScript.
