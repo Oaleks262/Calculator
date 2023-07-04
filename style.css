@@ -9,9 +9,11 @@
     border-radius: 8px;
     box-shadow: 0 20px 50px #000cb6;
 }
+
 .display{
     width: 100%;
 }
+
 .display input{
     width: 100%;
     padding: 15px 10px;
@@ -21,15 +23,18 @@
     color: #ffffff;
     font-size: 35px;
 }
+
 .display input::placeholder{
     color: #b9b6c8;
 }
+
 .buttons{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     margin-top: 40px;
 }
+
 .buttons input[type="button"]{
     font-size: 20px;
     padding: 17px;
@@ -39,10 +44,12 @@
     cursor: pointer;
     border-radius: 5px;
 }
+
 input[type="button"]#equals{
     grid-row:  span 2;
     background-color: #fa726b;
 }
+
 input[type="button"][value="0"]{
     grid-column: span 2;
 }

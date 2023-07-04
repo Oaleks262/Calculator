@@ -1,41 +1,61 @@
-let equals_pressed = 0;
+let equalsPressed = 0;
+        let input = document.getElementById("input");
+        let equals = document.getElementById("equals");
+        let deleteButton = document.getElementById("delete");
+        let clean = document.getElementById("clean");
+        let numberButtons = document.querySelectorAll(".number");
+        let operatorButtons = document.querySelectorAll(".operator");
+        let decimalButton = document.getElementById("decimal");
 
-let button_input = document.querySelectorAll(".input-button");
-
-let input = document.getElementById("input");
-let equals = document.getElementById("equals");
-let delet = document.getElementById("delet");
-let clean = document.getElementById("clean");
-
-window.onload = () => {
-input.value = "";
-
-};
-
-button_input.forEach((button_class) =>{
-    button_class.addEventListener("click", ()=> {
-        if (equals_pressed == 1){
+        window.onload = () => {
             input.value = "";
-            equals_pressed = 0;
-        }
-        input.value += button_class.value;
-    });
-});
+        };
 
-equals.addEventListener("click", () => {
-    equals_pressed = 1;
-    let inp_val = input.value;
-    try{
-        let solution = eval(inp_val);
+        numberButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                if (equalsPressed == 1) {
+                    input.value = "";
+                    equalsPressed = 0;
+                }
+                input.value += button.value;
+            });
+        });
 
-        if(Number.isInteger(solution)){
-            input.value = solution;
-        }
-        else{
-            input.value = solution.toFixed(2);
-        }
-    } 
-    catch(err){
-        alert("Invalid Input");
-    }
-});
+        operatorButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                if (equalsPressed == 1) {
+                    equalsPressed = 0;
+                }
+                input.value += button.value;
+            });
+        });
+
+        equals.addEventListener("click", () => {
+            equalsPressed = 1;
+            let inputValue = input.value;
+            try {
+                let solution = eval(inputValue);
+
+                if (Number.isInteger(solution)) {
+                    input.value = solution;
+                } else {
+                    input.value = solution.toFixed(2);
+                }
+            } catch (err) {
+                alert("Invalid Input");
+            }
+        });
+
+        deleteButton.addEventListener("click", () => {
+            input.value = input.value.slice(0, -1);
+        });
+
+        clean.addEventListener("click", () => {
+            input.value = "";
+        });
+
+        decimalButton.addEventListener("click", () => {
+            if (!input.value.includes(".")) {
+                input.value += ".";
+            }
+        });
