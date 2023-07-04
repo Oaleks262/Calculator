@@ -1,4 +1,4 @@
-# Calculator
+# JavaScript Calculator/JavaScript Калькулятор
 JavaScript Calculator
 This repository contains a simple calculator implemented in JavaScript. The calculator provides basic functionality for performing arithmetic operations and calculations.
 
